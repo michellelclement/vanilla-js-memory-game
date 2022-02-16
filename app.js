@@ -40,7 +40,7 @@ const randomize = () => {
 const cardGenerator = () => {
     const cardData = randomize();
     //Generate HTML
-    cardData.forEach((item) => {
+    cardData.forEach((item, index) => {
         const card = document.createElement("div");
         const face = document.createElement("img");
         const back = document.createElement("div");
@@ -50,14 +50,22 @@ const cardGenerator = () => {
         back.classList = "back";
     //Attach the info(img) to the cards
         face.src = item.imgSrc;
+        card.setAttribute('name', item.name);
     //Attach the cards to the section
         section.appendChild(card);
         card.appendChild(face);
         card.appendChild(back);
         card.addEventListener('click', (e) => {
             card.classList.toggle('toggleCard');
+            checkCards(e);
         });
     }); 
+};
+
+//Check if cards match
+const checkCards = (e) => {
+    const clickedCard = e.target;
+    console.log(clickedCard);
 };
 
 cardGenerator();
