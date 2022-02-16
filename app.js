@@ -32,7 +32,15 @@ const randomize = () => {
     const cardData = getData();
     //Randomiser
     cardData.sort(() => Math.random() - 0.5);
+    //Nothing is returned so need to...
+    return cardData
+};
+
+//Card Generator function
+const cardGenerator = () => {
+    const cardData = randomize();
     console.log(cardData);
 };
 
-randomize();
+cardGenerator();
+
