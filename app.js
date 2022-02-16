@@ -30,6 +30,8 @@ const getData = () => [
 //Randomise funcion
 const randomize = () => {
     const cardData = getData();
+    //Randomiser
+    cardData.sort(() => Math.random() - 0.5);
     console.log(cardData);
 };
 
