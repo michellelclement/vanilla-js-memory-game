@@ -78,7 +78,7 @@ const checkCards = (e) => {
         flippedCards.forEach(card => {
             card.classList.remove('flipped');
             card.style.pointerEvents = 'none';
-        })
+        });
         } else {
             console.log('wrong');
             flippedCards.forEach(card => {
@@ -87,8 +87,21 @@ const checkCards = (e) => {
             });
             playerLives--;
             playerLivesCount.textContent = playerLives;
+            if(playerLives === 0) {
+                restart();
+            }
         }
     }
+};
+
+//Restart
+const restart = () => {
+    let cardData = randomize();
+    let faces = document.querySelectorAll(".face");
+    let cards = document.querySelectorAll(".card");
+    cardData.forEach((item, index) => {
+        cards[index].classList.remove('toggleCard');
+    });
 };
 
 cardGenerator();
