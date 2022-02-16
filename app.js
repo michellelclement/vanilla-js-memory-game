@@ -68,6 +68,7 @@ const checkCards = (e) => {
     console.log(clickedCard);
     clickedCard.classList.add('flipped');
     const flippedCards = document.querySelectorAll('.flipped');
+    const toggleCard = document.querySelectorAll(".toggleCard");
     //Logic to check cards match
     if(flippedCards.length === 2) {
         if(
@@ -88,14 +89,18 @@ const checkCards = (e) => {
             playerLives--;
             playerLivesCount.textContent = playerLives;
             if(playerLives === 0) {
-                restart();
+                restart("Oh no! Try again.");
             }
         }
+    }
+    //Run check to see if won the game
+    if(toggleCard.length === 16) {
+        restart("You won!");
     }
 };
 
 //Restart
-const restart = () => {
+const restart = (text) => {
     let cardData = randomize();
     let faces = document.querySelectorAll(".face");
     let cards = document.querySelectorAll(".card");
@@ -112,6 +117,7 @@ const restart = () => {
     });
     playerLives = 5;
     playerLivesCount.textContent = playerLives;
+    setTimeout(() => window.alert(text), 100);
 };
 
 cardGenerator();
