@@ -39,7 +39,10 @@ const randomize = () => {
 //Card Generator function
 const cardGenerator = () => {
     const cardData = randomize();
-    console.log(cardData);
+    //Generate HTML
+    const card = document.createElement("div");
+    const face = document.createElement("img");
+    const back = document.createElement("div");
 };
 
 cardGenerator();
