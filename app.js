@@ -1,7 +1,7 @@
 //Grab a couple of things
 const section = document.querySelector('section');
-const playerLivesCount = document.querySelector('span');
-const playerLives = 5;
+let playerLivesCount = document.querySelector('span');
+let playerLives = 5;
 
 
 //Link text 
@@ -83,8 +83,10 @@ const checkCards = (e) => {
             console.log('wrong');
             flippedCards.forEach(card => {
                 card.classList.remove("flipped");
-                setTimeout(() => card.classList.remove("toggleCard"), 2000) ;
+                setTimeout(() => card.classList.remove("toggleCard"), 2000);
             });
+            playerLives--;
+            playerLivesCount.textContent = playerLives;
         }
     }
 };
