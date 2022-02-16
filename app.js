@@ -66,6 +66,19 @@ const cardGenerator = () => {
 const checkCards = (e) => {
     const clickedCard = e.target;
     console.log(clickedCard);
+    clickedCard.classList.add('flipped');
+    const flippedCards = document.querySelectorAll('.flipped');
+    //Logic to check cards match
+    if(flippedCards.length === 2) {
+        if(
+            flippedCards[0].getAttribute('name') === 
+            flippedCards[1].getAttribute('name')
+            ) {
+        console.log('match');
+        } else {
+            console.log('wrong');
+        }
+    }
 };
 
 cardGenerator();
