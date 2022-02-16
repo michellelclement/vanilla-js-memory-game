@@ -45,9 +45,9 @@ const cardGenerator = () => {
         const face = document.createElement("img");
         const back = document.createElement("div");
     //Add classes to new elements
-        card.classList = 'card';
-        face.classList = 'face';
-        back.classlist = 'back';
+        card.classList = "card";
+        face.classList = "face";
+        back.classList = "back";
     //Attach the info(img) to the cards
         face.src = item.imgSrc;
     //Attach the cards to the section
