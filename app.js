@@ -40,13 +40,19 @@ const randomize = () => {
 const cardGenerator = () => {
     const cardData = randomize();
     //Generate HTML
-    const card = document.createElement("div");
-    const face = document.createElement("img");
-    const back = document.createElement("div");
+    cardData.forEach((item) => {
+        const card = document.createElement("div");
+        const face = document.createElement("img");
+        const back = document.createElement("div");
     //Add classes to new elements
-    card.classList = 'card';
-    face.classList = 'face';
-    back.classlist = 'back';
+        card.classList = 'card';
+        face.classList = 'face';
+        back.classlist = 'back';
+    //Attach the cards to the section
+        section.appendChild(card);
+        card.appendChild(face);
+        card.appendChild(back);
+    }); 
 };
 
 cardGenerator();
