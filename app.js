@@ -102,9 +102,11 @@ const restart = () => {
     cardData.forEach((item, index) => {
         cards[index].classList.remove('toggleCard');
         //Randomize
-        cards[index].style.pointerEvents = 'all';
-        faces[index].src = item.imgSrc;
-        cards[index].setAttribute('name', item.name);
+        setTimeout(() => {
+            cards[index].style.pointerEvents = 'all';
+            faces[index].src = item.imgSrc;
+            cards[index].setAttribute('name', item.name);
+        }, 1000);
     });
     playerLives = 5;
     playerLivesCount.textContent = playerLives;
