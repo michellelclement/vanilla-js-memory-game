@@ -77,6 +77,10 @@ const checkCards = (e) => {
         console.log('match');
         } else {
             console.log('wrong');
+            flippedCards.forEach(card => {
+                card.classList.remove("flipped");
+                setTimeout(() => card.classList.remove("toggleCard"), 2000) ;
+            });
         }
     }
 };
